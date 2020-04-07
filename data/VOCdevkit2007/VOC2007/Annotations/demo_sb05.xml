@@ -1,0 +1,26 @@
+<annotation>
+	<folder>demo</folder>
+	<filename>demo_sb05.jpg</filename>
+	<path>C:\Users\Owner\Desktop\data\demo\demo_sb05.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>401</width>
+		<height>266</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sb05</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>58</xmin>
+			<ymin>38</ymin>
+			<xmax>349</xmax>
+			<ymax>210</ymax>
+		</bndbox>
+	</object>
+</annotation>

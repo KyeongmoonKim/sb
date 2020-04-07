@@ -1,0 +1,375 @@
++ echo Logging output to experiments/logs/test_vgg16_voc_2007_trainval_.txt.2019-12-14_15-16-47
+Logging output to experiments/logs/test_vgg16_voc_2007_trainval_.txt.2019-12-14_15-16-47
++ set +x
++ [[ ! -z '' ]]
++ CUDA_VISIBLE_DEVICES=0
++ time python ./tools/test_net.py --imdb voc_2007_test --model output/vgg16/voc_2007_trainval/default/vgg16_faster_rcnn_iter_85000.ckpt --cfg experiments/cfgs/vgg16.yml --net vgg16 --set ANCHOR_SCALES '[8,16,32]' ANCHOR_RATIOS '[0.5,1,2]'
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+Called with args:
+Namespace(cfg_file='experiments/cfgs/vgg16.yml', comp_mode=False, imdb_name='voc_2007_test', max_per_image=100, model='output/vgg16/voc_2007_trainval/default/vgg16_faster_rcnn_iter_85000.ckpt', net='vgg16', set_cfgs=['ANCHOR_SCALES', '[8,16,32]', 'ANCHOR_RATIOS', '[0.5,1,2]'], tag='')
+Using config:
+{'ANCHOR_RATIOS': [0.5, 1, 2],
+ 'ANCHOR_SCALES': [8, 16, 32],
+ 'DATA_DIR': '/content/drive/My Drive/code2/tf-faster-rcnn-master/data',
+ 'EXP_DIR': 'vgg16',
+ 'MATLAB': 'matlab',
+ 'MOBILENET': {'DEPTH_MULTIPLIER': 1.0,
+               'FIXED_LAYERS': 5,
+               'REGU_DEPTH': False,
+               'WEIGHT_DECAY': 4e-05},
+ 'PIXEL_MEANS': array([[[102.9801, 115.9465, 122.7717]]]),
+ 'POOLING_MODE': 'crop',
+ 'POOLING_SIZE': 7,
+ 'RESNET': {'FIXED_BLOCKS': 1, 'MAX_POOL': False},
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/content/drive/My Drive/code2/tf-faster-rcnn-master',
+ 'RPN_CHANNELS': 512,
+ 'TEST': {'BBOX_REG': True,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'MODE': 'nms',
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'gt',
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'RPN_TOP_N': 5000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': False,
+           'BATCH_SIZE': 256,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'BIAS_DECAY': False,
+           'DISPLAY': 20,
+           'DOUBLE_BIAS': True,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.0001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_KEPT': 3,
+           'SNAPSHOT_PREFIX': 'vgg16_faster_rcnn',
+           'STEPSIZE': [30000],
+           'SUMMARY_INTERVAL': 180,
+           'TRUNCATED': False,
+           'USE_ALL_GT': True,
+           'USE_FLIPPED': False,
+           'USE_GT': False,
+           'WEIGHT_DECAY': 0.0001},
+ 'USE_E2E_TF': True,
+ 'USE_GPU_NMS': True}
+2019-12-14 15:16:50.498221: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-14 15:16:50.583633: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:998] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-12-14 15:16:50.584738: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x2f1fe40 executing computations on platform CUDA. Devices:
+2019-12-14 15:16:50.584775: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): Tesla K80, Compute Capability 3.7
+2019-12-14 15:16:50.586876: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2019-12-14 15:16:50.587201: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x2f1ffa0 executing computations on platform Host. Devices:
+2019-12-14 15:16:50.587236: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-12-14 15:16:50.587501: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:04.0
+totalMemory: 11.17GiB freeMemory: 11.11GiB
+2019-12-14 15:16:50.587547: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-12-14 15:16:50.588958: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-14 15:16:50.588992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-12-14 15:16:50.589008: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-12-14 15:16:50.589157: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10805 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7)
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/nets/network.py:213: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/layer_utils/proposal_layer.py:75: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/contrib/layers/python/layers/layers.py:1624: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+Loading model check point from output/vgg16/voc_2007_trainval/default/vgg16_faster_rcnn_iter_85000.ckpt
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+Loaded.
+2019-12-14 15:16:53.459712: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_12. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.459785: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_14. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.459816: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_16. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.459841: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_18. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.511274: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_12. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.511369: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_14. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.511401: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_16. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.511425: W ./tensorflow/core/grappler/optimizers/graph_optimizer_stage.h:241] Failed to run optimizer ArithmeticOptimizer, stage RemoveStackStridedSliceSameAxis node vgg_16_1/rois/strided_slice_18. Error: Pack node (vgg_16_1/rois/stack) axis attribute is out of bounds: 1
+2019-12-14 15:16:53.538832: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+im_detect: 1/199 3.678s 0.004s
+im_detect: 2/199 2.821s 0.004s
+im_detect: 3/199 2.474s 0.004s
+im_detect: 4/199 1.947s 0.004s
+im_detect: 5/199 1.618s 0.004s
+im_detect: 6/199 1.446s 0.004s
+im_detect: 7/199 1.499s 0.004s
+im_detect: 8/199 1.381s 0.004s
+im_detect: 9/199 1.326s 0.004s
+im_detect: 10/199 1.385s 0.004s
+im_detect: 11/199 1.450s 0.004s
+im_detect: 12/199 1.376s 0.004s
+im_detect: 13/199 1.444s 0.004s
+im_detect: 14/199 1.480s 0.004s
+im_detect: 15/199 1.419s 0.004s
+im_detect: 16/199 1.448s 0.004s
+im_detect: 17/199 1.486s 0.004s
+im_detect: 18/199 1.506s 0.004s
+im_detect: 19/199 1.535s 0.004s
+im_detect: 20/199 1.558s 0.004s
+im_detect: 21/199 1.495s 0.004s
+im_detect: 22/199 1.492s 0.004s
+im_detect: 23/199 1.441s 0.004s
+im_detect: 24/199 1.393s 0.004s
+im_detect: 25/199 1.376s 0.004s
+im_detect: 26/199 1.394s 0.004s
+im_detect: 27/199 1.411s 0.004s
+im_detect: 28/199 1.370s 0.004s
+im_detect: 29/199 1.342s 0.004s
+im_detect: 30/199 1.306s 0.004s
+im_detect: 31/199 1.279s 0.004s
+im_detect: 32/199 1.252s 0.004s
+im_detect: 33/199 1.263s 0.004s
+im_detect: 34/199 1.233s 0.004s
+im_detect: 35/199 1.258s 0.004s
+im_detect: 36/199 1.273s 0.004s
+im_detect: 37/199 1.287s 0.004s
+im_detect: 38/199 1.265s 0.004s
+im_detect: 39/199 1.239s 0.004s
+im_detect: 40/199 1.251s 0.004s
+im_detect: 41/199 1.234s 0.004s
+im_detect: 42/199 1.247s 0.004s
+im_detect: 43/199 1.242s 0.004s
+im_detect: 44/199 1.221s 0.004s
+im_detect: 45/199 1.203s 0.004s
+im_detect: 46/199 1.183s 0.004s
+im_detect: 47/199 1.163s 0.004s
+im_detect: 48/199 1.145s 0.004s
+im_detect: 49/199 1.134s 0.004s
+im_detect: 50/199 1.148s 0.004s
+im_detect: 51/199 1.130s 0.004s
+im_detect: 52/199 1.126s 0.004s
+im_detect: 53/199 1.110s 0.004s
+im_detect: 54/199 1.099s 0.004s
+im_detect: 55/199 1.111s 0.004s
+im_detect: 56/199 1.109s 0.004s
+im_detect: 57/199 1.116s 0.004s
+im_detect: 58/199 1.123s 0.004s
+im_detect: 59/199 1.131s 0.004s
+im_detect: 60/199 1.140s 0.004s
+im_detect: 61/199 1.153s 0.004s
+im_detect: 62/199 1.155s 0.004s
+im_detect: 63/199 1.169s 0.004s
+im_detect: 64/199 1.156s 0.004s
+im_detect: 65/199 1.160s 0.004s
+im_detect: 66/199 1.174s 0.004s
+im_detect: 67/199 1.161s 0.004s
+im_detect: 68/199 1.153s 0.004s
+im_detect: 69/199 1.140s 0.004s
+im_detect: 70/199 1.132s 0.004s
+im_detect: 71/199 1.144s 0.004s
+im_detect: 72/199 1.131s 0.004s
+im_detect: 73/199 1.140s 0.004s
+im_detect: 74/199 1.129s 0.004s
+im_detect: 75/199 1.132s 0.004s
+im_detect: 76/199 1.121s 0.004s
+im_detect: 77/199 1.118s 0.004s
+im_detect: 78/199 1.124s 0.004s
+im_detect: 79/199 1.133s 0.004s
+im_detect: 80/199 1.123s 0.004s
+im_detect: 81/199 1.131s 0.004s
+im_detect: 82/199 1.120s 0.004s
+im_detect: 83/199 1.123s 0.004s
+im_detect: 84/199 1.117s 0.004s
+im_detect: 85/199 1.124s 0.004s
+im_detect: 86/199 1.129s 0.004s
+im_detect: 87/199 1.127s 0.004s
+im_detect: 88/199 1.118s 0.004s
+im_detect: 89/199 1.108s 0.004s
+im_detect: 90/199 1.102s 0.004s
+im_detect: 91/199 1.097s 0.004s
+im_detect: 92/199 1.106s 0.004s
+im_detect: 93/199 1.100s 0.004s
+im_detect: 94/199 1.109s 0.004s
+im_detect: 95/199 1.107s 0.004s
+im_detect: 96/199 1.099s 0.004s
+im_detect: 97/199 1.091s 0.004s
+im_detect: 98/199 1.082s 0.004s
+im_detect: 99/199 1.078s 0.004s
+im_detect: 100/199 1.087s 0.004s
+im_detect: 101/199 1.094s 0.004s
+im_detect: 102/199 1.102s 0.004s
+im_detect: 103/199 1.103s 0.004s
+im_detect: 104/199 1.102s 0.004s
+im_detect: 105/199 1.094s 0.004s
+im_detect: 106/199 1.087s 0.004s
+im_detect: 107/199 1.093s 0.004s
+im_detect: 108/199 1.087s 0.004s
+im_detect: 109/199 1.085s 0.004s
+im_detect: 110/199 1.083s 0.004s
+im_detect: 111/199 1.081s 0.004s
+im_detect: 112/199 1.074s 0.004s
+im_detect: 113/199 1.078s 0.004s
+im_detect: 114/199 1.076s 0.004s
+im_detect: 115/199 1.069s 0.004s
+im_detect: 116/199 1.063s 0.004s
+im_detect: 117/199 1.062s 0.004s
+im_detect: 118/199 1.064s 0.004s
+im_detect: 119/199 1.068s 0.004s
+im_detect: 120/199 1.062s 0.004s
+im_detect: 121/199 1.057s 0.004s
+im_detect: 122/199 1.050s 0.004s
+im_detect: 123/199 1.044s 0.004s
+im_detect: 124/199 1.038s 0.004s
+im_detect: 125/199 1.041s 0.004s
+im_detect: 126/199 1.041s 0.004s
+im_detect: 127/199 1.046s 0.004s
+im_detect: 128/199 1.042s 0.004s
+im_detect: 129/199 1.037s 0.004s
+im_detect: 130/199 1.030s 0.004s
+im_detect: 131/199 1.033s 0.004s
+im_detect: 132/199 1.038s 0.004s
+im_detect: 133/199 1.032s 0.004s
+im_detect: 134/199 1.027s 0.004s
+im_detect: 135/199 1.032s 0.004s
+im_detect: 136/199 1.026s 0.004s
+im_detect: 137/199 1.024s 0.004s
+im_detect: 138/199 1.023s 0.004s
+im_detect: 139/199 1.025s 0.004s
+im_detect: 140/199 1.020s 0.004s
+im_detect: 141/199 1.017s 0.004s
+im_detect: 142/199 1.021s 0.004s
+im_detect: 143/199 1.020s 0.004s
+im_detect: 144/199 1.019s 0.004s
+im_detect: 145/199 1.023s 0.004s
+im_detect: 146/199 1.018s 0.004s
+im_detect: 147/199 1.013s 0.004s
+im_detect: 148/199 1.014s 0.004s
+im_detect: 149/199 1.010s 0.004s
+im_detect: 150/199 1.007s 0.004s
+im_detect: 151/199 1.002s 0.004s
+im_detect: 152/199 1.008s 0.004s
+im_detect: 153/199 1.005s 0.004s
+im_detect: 154/199 1.005s 0.004s
+im_detect: 155/199 1.002s 0.004s
+im_detect: 156/199 1.007s 0.004s
+im_detect: 157/199 1.002s 0.004s
+im_detect: 158/199 1.008s 0.004s
+im_detect: 159/199 1.003s 0.004s
+im_detect: 160/199 1.000s 0.004s
+im_detect: 161/199 0.997s 0.004s
+im_detect: 162/199 0.994s 0.004s
+im_detect: 163/199 0.989s 0.004s
+im_detect: 164/199 0.985s 0.004s
+im_detect: 165/199 0.989s 0.004s
+im_detect: 166/199 0.986s 0.004s
+im_detect: 167/199 0.991s 0.004s
+im_detect: 168/199 0.986s 0.004s
+im_detect: 169/199 0.986s 0.004s
+im_detect: 170/199 0.990s 0.004s
+im_detect: 171/199 0.994s 0.004s
+im_detect: 172/199 0.989s 0.004s
+im_detect: 173/199 0.986s 0.004s
+im_detect: 174/199 0.982s 0.004s
+im_detect: 175/199 0.978s 0.004s
+im_detect: 176/199 0.974s 0.004s
+im_detect: 177/199 0.970s 0.004s
+im_detect: 178/199 0.968s 0.004s
+im_detect: 179/199 0.964s 0.004s
+im_detect: 180/199 0.962s 0.004s
+im_detect: 181/199 0.961s 0.004s
+im_detect: 182/199 0.958s 0.004s
+im_detect: 183/199 0.954s 0.004s
+im_detect: 184/199 0.959s 0.004s
+im_detect: 185/199 0.957s 0.004s
+im_detect: 186/199 0.957s 0.004s
+im_detect: 187/199 0.954s 0.004s
+im_detect: 188/199 0.950s 0.004s
+im_detect: 189/199 0.947s 0.004s
+im_detect: 190/199 0.943s 0.004s
+im_detect: 191/199 0.944s 0.004s
+im_detect: 192/199 0.940s 0.004s
+im_detect: 193/199 0.937s 0.004s
+im_detect: 194/199 0.934s 0.004s
+im_detect: 195/199 0.933s 0.004s
+im_detect: 196/199 0.930s 0.004s
+im_detect: 197/199 0.928s 0.004s
+im_detect: 198/199 0.926s 0.004s
+im_detect: 199/199 0.924s 0.004s
+Evaluating detections
+Writing sb00 VOC results file
+Writing sb01 VOC results file
+Writing sb02 VOC results file
+Writing sb03 VOC results file
+Writing sb04 VOC results file
+Writing sb05 VOC results file
+Writing sb06 VOC results file
+Writing sb07 VOC results file
+Writing sb08 VOC results file
+Writing sb09 VOC results file
+Writing sb10 VOC results file
+Writing sb12 VOC results file
+Writing sb13 VOC results file
+VOC07 metric? Yes
+/content/drive/My Drive/code2/tf-faster-rcnn-master/data/VOCdevkit2007/VOC2007/ImageSets/Main/test.txt_annots.pkl
+True
+Traceback (most recent call last):
+  File "/content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/datasets/voc_eval.py", line 128, in voc_eval
+    recs = pickle.load(f)
+EOFError: Ran out of input
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./tools/test_net.py", line 120, in <module>
+    test_net(sess, net, imdb, filename, max_per_image=args.max_per_image)
+  File "/content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/model/test.py", line 192, in test_net
+    imdb.evaluate_detections(all_boxes, output_dir)
+  File "/content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/datasets/pascal_voc.py", line 281, in evaluate_detections
+    self._do_python_eval(output_dir)
+  File "/content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/datasets/pascal_voc.py", line 244, in _do_python_eval
+    use_07_metric=use_07_metric, use_diff=self.config['use_diff'])
+  File "/content/drive/My Drive/code2/tf-faster-rcnn-master/tools/../lib/datasets/voc_eval.py", line 130, in voc_eval
+    recs = pickle.load(f, encoding='bytes')
+EOFError: Ran out of input
+Command exited with non-zero status 1
+112.75user 63.65system 3:20.59elapsed 87%CPU (0avgtext+0avgdata 3336648maxresident)k
+1315048inputs+0outputs (5major+596659minor)pagefaults 0swaps
